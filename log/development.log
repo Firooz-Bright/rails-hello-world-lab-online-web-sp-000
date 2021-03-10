@@ -229,3 +229,34 @@ Processing by StaticController#hello_world as HTML
 Completed 200 OK in 378ms (Views: 377.9ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 73.222.180.244 at 2020-11-20 01:31:22 +0000
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /usr/local/rvm/gems/ruby-2.6.1/gems/railties-5.0.7.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.6.1/gems/railties-5.0.7.1/lib/rails/templates/rails/welcome/index.html.erb (3.0ms)
+Completed 200 OK in 33ms (Views: 21.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/hello_world" for 73.222.180.244 at 2020-11-20 01:31:28 +0000
+Processing by StaticController#hello_world as HTML
+  Rendering static/hello_page.html.erb within layouts/application
+  Rendered static/hello_page.html.erb within layouts/application (31.5ms)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `time' for #<#<Class:0x00000000035a9378>:0x0000000003588c68>
+Did you mean?  timeout):
+    1: <h1>Hello World</h1>
+    2: <p>It is now <%= time.now %></p>
+  
+app/views/static/hello_page.html.erb:2:in `_app_views_static_hello_page_html_erb__1642213824875767591_28207780'
+app/controllers/static_controller.rb:3:in `hello_world'
+  Rendering /usr/local/rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /usr/local/rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.9ms)
+  Rendering /usr/local/rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /usr/local/rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (21.4ms)
